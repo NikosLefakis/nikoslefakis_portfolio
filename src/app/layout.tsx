@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/react";
+import { FontAwesomeLoader } from "@/components/FontAwesomeLoader";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -40,13 +41,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
       </head>
       <body className={`${geist.variable} ${geist.className}`}>
         <Providers>{children}</Providers>
+        <FontAwesomeLoader />
         <Analytics />
       </body>
     </html>

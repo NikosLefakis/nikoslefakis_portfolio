@@ -7,11 +7,13 @@ import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
     <main>
       <ScrollProgress />
+      <BackToTop />
       <Header />
       <Hero />
       <Projects />
