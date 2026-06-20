@@ -25,14 +25,6 @@ export const metadata: Metadata = {
       "Full Stack Developer specializing in Next.js, TypeScript, and AI-powered applications. Building modern web products from concept to deployment.",
     url: "https://nikoslefakis.vercel.app/",
     siteName: "Nikos Lefakis",
-    images: [
-      {
-        url: "/assets/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Nikos Lefakis - Full Stack Developer Portfolio",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
@@ -40,7 +32,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nikos Lefakis",
     description: "Full Stack Developer specializing in Next.js, TypeScript, and AI-powered applications.",
-    images: ["/assets/og-image.jpg"],
   },
 };
 
