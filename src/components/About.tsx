@@ -17,7 +17,7 @@ export default function About() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-10 md:mb-16">
           <div className="flex items-center gap-3 mb-5">
           <span className="font-mono text-xs font-medium text-cyan-500/60">04</span>
-          <span className="w-5 h-px bg-white/10" />
+          <span className="w-5 h-px t-divider" />
           <span className="text-xs font-medium uppercase tracking-[0.12em] t-muted">{t.about.sectionLabel}</span>
         </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">

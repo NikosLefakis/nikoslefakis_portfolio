@@ -65,7 +65,7 @@ export default function Header() {
           {/* Gradient-border container */}
           <div className="relative w-9 h-9 shrink-0">
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-cyan-400/30 to-cyan-700/15 group-hover:from-cyan-400/50 group-hover:to-cyan-600/30 transition-all duration-300" />
-            <div className="absolute inset-[1px] rounded-[10px] bg-[#060d1a] flex items-center justify-center">
+            <div className="absolute inset-[1px] rounded-[10px] t-logo-bg flex items-center justify-center">
               <LogoMark className="w-[18px] h-[18px]" />
             </div>
           </div>

@@ -35,7 +35,7 @@ export default function Projects() {
         >
           <div className="flex items-center gap-3 mb-5">
           <span className="font-mono text-xs font-medium text-cyan-500/60">01</span>
-          <span className="w-5 h-px bg-white/10" />
+          <span className="w-5 h-px t-divider" />
           <span className="text-xs font-medium uppercase tracking-[0.12em] t-muted">{t.projects.sectionLabel}</span>
         </div>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">

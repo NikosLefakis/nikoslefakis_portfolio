@@ -235,3 +235,10 @@
 .light .hero-vignette-h {
   background: none;
 }
+
+/* ─── Theme-aware utilities ──────────────────────────────── */
+.t-divider { background: rgba(255,255,255,0.1); transition: background 0.3s var(--ease-smooth); }
+.light .t-divider { background: rgba(0,0,0,0.15); }
+
+.t-logo-bg { background: #060d1a; transition: background 0.3s var(--ease-smooth); }
+.light .t-logo-bg { background: #f8fafc; }

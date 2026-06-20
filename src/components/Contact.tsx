@@ -93,7 +93,7 @@ export default function Contact() {
         >
           <div className="flex items-center gap-3 mb-4 justify-center">
           <span className="font-mono text-xs font-medium text-cyan-500/60">05</span>
-          <span className="w-5 h-px bg-white/10" />
+          <span className="w-5 h-px t-divider" />
           <span className="text-xs font-medium uppercase tracking-[0.12em] t-muted">{t.contact.sectionLabel}</span>
         </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">

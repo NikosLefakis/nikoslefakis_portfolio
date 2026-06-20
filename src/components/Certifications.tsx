@@ -66,7 +66,7 @@ export default function Certifications() {
         >
           <div className="flex items-center gap-3 mb-5">
           <span className="font-mono text-xs font-medium text-cyan-500/60">03</span>
-          <span className="w-5 h-px bg-white/10" />
+          <span className="w-5 h-px t-divider" />
           <span className="text-xs font-medium uppercase tracking-[0.12em] t-muted">{t.certifications.sectionLabel}</span>
         </div>
           <h2 className="text-4xl font-bold tracking-tight mb-4">
