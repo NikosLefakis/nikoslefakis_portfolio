@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
+import { Analytics } from "@vercel/analytics/react";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body className={`${geist.variable} ${geist.className}`}>
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
