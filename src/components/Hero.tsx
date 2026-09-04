@@ -135,6 +135,7 @@ export default function Hero() {
               <a
                 href="/assets/cv_nikoslefakis.pdf"
                 download
+                hidden
                 className="px-7 py-3.5 rounded-xl t-border border t-badge t-text font-medium text-center transition-all duration-300 flex items-center justify-center gap-2 hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/5 active:scale-[0.98]"
               >
                 <i className="fa-solid fa-download text-sm" />
