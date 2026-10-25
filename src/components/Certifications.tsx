@@ -1,8 +1,8 @@
 "use client";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { reveal as fadeUp, revealGroup as stagger } from "@/lib/motion";
 
-const EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 interface Certification {
   title: string;
@@ -40,16 +40,6 @@ const certsData: Certification[] = [
   },
 ];
 
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EXPO } },
-};
-
-const stagger: Variants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-};
-
 export default function Certifications() {
   const { t } = useLanguage();
 
@@ -64,11 +54,6 @@ export default function Certifications() {
           variants={fadeUp}
           className="mb-8 md:mb-14"
         >
-          <div className="flex items-center gap-3 mb-5">
-          <span className="font-mono text-xs font-medium text-cyan-500/60">03</span>
-          <span className="w-5 h-px t-divider" />
-          <span className="text-xs font-medium uppercase tracking-[0.12em] t-muted">{t.certifications.sectionLabel}</span>
-        </div>
           <h2 className="text-4xl font-bold tracking-tight mb-4">
             {t.certifications.title}{" "}
             <span className="accent-glow">{t.certifications.titleAccent}</span>
@@ -87,13 +72,11 @@ export default function Certifications() {
             <motion.div
               key={index}
               variants={fadeUp}
-              whileHover={{ y: -3 }}
-              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col gap-4 p-6 rounded-2xl glass-panel card-hover-glow group"
             >
               {/* Header */}
               <div className="flex justify-between items-start">
-                <div className="w-9 h-9 rounded-lg t-surface t-border border flex items-center justify-center text-cyan-500 group-hover:scale-110 group-hover:border-cyan-500/40 transition-all duration-350">
+                <div className="w-9 h-9 rounded-lg t-surface t-border border flex items-center justify-center text-cyan-500 group-hover:border-cyan-500/40 transition-all duration-350">
                   <i className={`${cert.issuerIcon} text-sm`} />
                 </div>
                 <span className="px-2.5 py-0.5 text-[11px] font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
@@ -103,7 +86,7 @@ export default function Certifications() {
 
               {/* Body */}
               <div className="flex-1 mt-1">
-                <p className="text-[11px] t-muted font-medium mb-2 uppercase tracking-widest">{cert.issuer}</p>
+                <p className="text-xs t-muted font-medium mb-2">{cert.issuer}</p>
                 <h3 className="text-base font-bold group-hover:text-cyan-400 transition-colors duration-300 leading-snug tracking-tight mb-1.5">
                   {cert.title}
                 </h3>

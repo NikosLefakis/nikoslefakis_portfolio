@@ -5,45 +5,48 @@ interface LogoMarkProps {
   className?: string;
 }
 
+/* Nikos Lefakis monogram: an N and an L that share one stem, on a deep blue
+   squircle. The foot of the L ends in a round dot, the same "node" the project
+   list uses. Gradient ids are unique per copy (useId) so several logos on one
+   page never share or lose their paint. */
 export function LogoMark({ className = "" }: LogoMarkProps) {
   const uid = useId().replace(/:/g, "");
-  const gradId = `nlg-${uid}`;
-  const glowId = `nlf-${uid}`;
+  const tile = `nl-tile-${uid}`;
+  const shine = `nl-shine-${uid}`;
 
   return (
     <svg
-      viewBox="0 0 24 24"
+      viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id={gradId} x1="4" y1="5" x2="20" y2="19" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#38bdf8" />
-          <stop offset="100%" stopColor="#0891b2" />
+        <linearGradient id={tile} x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#4f7dff" />
+          <stop offset="1" stopColor="#1d3fb8" />
         </linearGradient>
-        <filter id={glowId} x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="0.7" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
+        <linearGradient id={shine} x1="32" y1="0" x2="32" y2="34" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#ffffff" stopOpacity="0.28" />
+          <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
+        </linearGradient>
       </defs>
-      {/*
-        NL combined mark:
-        — N: left vertical + diagonal (top-left → bottom-right) + right vertical
-        — L: shares right vertical of N, adds horizontal foot
-      */}
+
+      {/* Squircle tile with a light edge and a soft top sheen */}
+      <rect width="64" height="64" rx="17" fill={`url(#${tile})`} />
+      <rect x="0.5" y="0.5" width="63" height="63" rx="16.5" stroke="#ffffff" strokeOpacity="0.18" />
+      <rect width="64" height="34" rx="17" fill={`url(#${shine})`} />
+
+      {/* N and L sharing the right stem */}
       <path
-        d="M4 5 L4 19 M4 5 L12 19 M12 5 L12 19 L20 19"
-        stroke={`url(#${gradId})`}
-        strokeWidth="2.1"
+        d="M18 46 V18 L33 46 V18 M33 46 H44"
+        stroke="#ffffff"
+        strokeWidth="4.6"
         strokeLinecap="round"
         strokeLinejoin="round"
-        filter={`url(#${glowId})`}
       />
+      <circle cx="48" cy="46" r="2.9" fill="#ffffff" />
     </svg>
   );
 }

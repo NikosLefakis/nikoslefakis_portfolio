@@ -30,13 +30,8 @@ export default function Footer() {
           <div className="md:col-span-5 flex flex-col gap-4">
             <Link href="#home" className="inline-flex items-center gap-2.5 group w-fit">
               {/* Gradient-border container */}
-              <div className="relative w-9 h-9 shrink-0">
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-cyan-400/30 to-cyan-700/15 group-hover:from-cyan-400/50 group-hover:to-cyan-600/30 transition-all duration-300" />
-                <div className="absolute inset-[1px] rounded-[10px] t-logo-bg flex items-center justify-center">
-                  <LogoMark className="w-[18px] h-[18px]" />
-                </div>
-              </div>
-              <span className="font-bold text-lg tracking-wide t-text group-hover:text-cyan-400 transition-colors duration-300">
+              <LogoMark className="w-9 h-9 shrink-0 transition-transform duration-200 group-active:scale-95" />
+              <span className="font-display font-extrabold text-lg tracking-tight t-text">
                 Nikos Lefakis
               </span>
             </Link>
@@ -56,7 +51,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="md:col-span-3">
-            <h4 className="text-[10px] font-semibold t-muted uppercase tracking-[0.18em] mb-5">{t.footer.navigation}</h4>
+            <h4 className="text-xs font-medium t-muted mb-5">{t.footer.navigation}</h4>
             <ul className="flex flex-col gap-3">
               {navItems.map(({ label, href }) => (
                 <li key={href}>
@@ -68,7 +63,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div className="md:col-span-4">
-            <h4 className="text-[10px] font-semibold t-muted uppercase tracking-[0.18em] mb-5">{t.footer.connect}</h4>
+            <h4 className="text-xs font-medium t-muted mb-5">{t.footer.connect}</h4>
             <ul className="flex flex-col gap-3">
               {SOCIALS.map(({ href, icon, label }) => (
                 <li key={label}>
@@ -92,7 +87,8 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t t-divide pt-7 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs t-subtle">
-          <p>© {new Date().getFullYear()} Nikos Lefakis · {t.footer.rights}</p>
+          <p>© {new Date().getFullYear()} Nikos Lefakis · {t.footer.rights}
+          </p>
           <span className="flex items-center gap-1.5">
             <i className="fa-solid fa-location-dot text-[10px]" />
             Heraklion, GR

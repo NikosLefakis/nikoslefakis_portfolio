@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
-import { motion, Variants, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { reveal as fadeUp, SPRING_SNAPPY } from "@/lib/motion";
 
-const EXPO: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const EMAIL = "lefnick@gmail.com";
 
 const CHANNELS = [
@@ -74,11 +74,6 @@ export default function Contact() {
     }
   };
 
-  const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EXPO } },
-  };
-
   const inputClass =
     "w-full t-input t-border border rounded-lg p-3 t-text placeholder:t-muted focus:outline-none focus:border-cyan-500 transition-all";
 
@@ -91,11 +86,6 @@ export default function Contact() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
           className="max-w-2xl mx-auto text-center mb-10 md:mb-16"
         >
-          <div className="flex items-center gap-3 mb-4 justify-center">
-          <span className="font-mono text-xs font-medium text-cyan-500/60">05</span>
-          <span className="w-5 h-px t-divider" />
-          <span className="text-xs font-medium uppercase tracking-[0.12em] t-muted">{t.contact.sectionLabel}</span>
-        </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
             {t.contact.title}{" "}
             {t.contact.titleAccent && <span className="accent-glow">{t.contact.titleAccent}</span>}
@@ -129,7 +119,7 @@ export default function Contact() {
                       <i className={`${ch.icon} text-sm`} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-[10px] font-semibold t-muted uppercase tracking-[0.15em] block mb-0.5">{ch.label}</span>
+                      <span className="text-xs font-medium t-muted block mb-0.5">{ch.label}</span>
                       <a
                         href={ch.href}
                         target={ch.href.startsWith("mailto") ? undefined : "_blank"}
@@ -140,13 +130,13 @@ export default function Contact() {
                       </a>
                     </div>
                     {ch.copyable && (
-                      <button onClick={copyEmail} className="shrink-0 p-2 rounded-lg t-badge hover:border-cyan-500/30 t-border border transition-all">
+                      <button onClick={copyEmail} className="press shrink-0 p-2 rounded-lg t-badge hover:border-cyan-500/30 t-border border transition-all">
                         <AnimatePresence mode="wait">
                           {copied ? (
-                            <motion.i key="check" initial={{ scale: 0.7 }} animate={{ scale: 1 }} exit={{ scale: 0.7 }}
+                            <motion.i key="check" initial={{ scale: 0.7, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.7, opacity: 0 }} transition={SPRING_SNAPPY}
                               className="fa-solid fa-circle-check text-emerald-400 text-xs" />
                           ) : (
-                            <motion.i key="copy" initial={{ scale: 0.7 }} animate={{ scale: 1 }} exit={{ scale: 0.7 }}
+                            <motion.i key="copy" initial={{ scale: 0.7, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.7, opacity: 0 }} transition={SPRING_SNAPPY}
                               className="fa-regular fa-copy text-xs t-muted hover:text-cyan-400 transition-colors" />
                           )}
                         </AnimatePresence>
@@ -169,13 +159,13 @@ export default function Contact() {
                     <i className="fa-solid fa-location-dot text-xs" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-semibold t-muted uppercase tracking-[0.15em] block mb-0.5">Location</span>
+                    <span className="text-xs font-medium t-muted block mb-0.5">Location</span>
                     <span className="t-text text-sm font-medium">{t.contact.location}</span>
                   </div>
                 </div>
 
                 <div>
-                  <span className="text-[10px] font-semibold t-muted uppercase tracking-[0.15em] block mb-3">{t.contact.available}</span>
+                  <span className="text-xs font-medium t-muted block mb-3">{t.contact.available}</span>
                   <div className="flex flex-wrap gap-2">
                     {t.contact.availability.map((item: string, i: number) => (
                       <span key={i} className="px-3 py-1.5 rounded-lg t-surface t-border border text-xs t-body hover:border-cyan-500/40 hover:text-cyan-400 transition-all duration-200 cursor-default">
@@ -204,14 +194,14 @@ export default function Contact() {
               <form className="flex flex-col gap-5 h-full relative z-10" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="contact-name" className="text-xs font-medium t-muted uppercase tracking-widest">{t.contact.nameLabel}</label>
+                    <label htmlFor="contact-name" className="text-xs font-medium t-muted">{t.contact.nameLabel}</label>
                     <input id="contact-name" type="text" placeholder={t.contact.namePlaceholder}
                       value={formData.name} className={inputClass}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       disabled={status.type === "loading"} />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="contact-email" className="text-xs font-medium t-muted uppercase tracking-widest">{t.contact.emailLabel}</label>
+                    <label htmlFor="contact-email" className="text-xs font-medium t-muted">{t.contact.emailLabel}</label>
                     <input id="contact-email" type="email" placeholder={t.contact.emailPlaceholder}
                       value={formData.email} className={inputClass}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -220,7 +210,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="contact-subject" className="text-xs font-medium t-muted uppercase tracking-widest">{t.contact.subjectLabel}</label>
+                  <label htmlFor="contact-subject" className="text-xs font-medium t-muted">{t.contact.subjectLabel}</label>
                   <input id="contact-subject" type="text" placeholder={t.contact.subjectPlaceholder}
                     value={formData.subject} className={inputClass}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -228,7 +218,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex flex-col gap-2 flex-1">
-                  <label htmlFor="contact-message" className="text-xs font-medium t-muted uppercase tracking-widest">{t.contact.messageLabel}</label>
+                  <label htmlFor="contact-message" className="text-xs font-medium t-muted">{t.contact.messageLabel}</label>
                   <textarea id="contact-message" rows={8} placeholder={t.contact.messagePlaceholder}
                     value={formData.message} className={`${inputClass} resize-none flex-1`}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -237,7 +227,7 @@ export default function Contact() {
 
                 <AnimatePresence mode="wait">
                   {status.type !== "idle" && (
-                    <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
+                    <motion.div initial={{ opacity: 0, transform: "translateY(-8px)" }} animate={{ opacity: 1, transform: "translateY(0px)" }} exit={{ opacity: 0, transform: "translateY(-8px)" }} transition={SPRING_SNAPPY}
                       className={`p-3 rounded-lg text-sm font-medium ${
                         status.type === "success" ? "bg-emerald-500/10 border border-emerald-500/20 text-emerald-500"
                         : status.type === "error" ? "bg-rose-500/10 border border-rose-500/20 text-rose-500"
@@ -255,7 +245,7 @@ export default function Contact() {
                 </AnimatePresence>
 
                 <button type="submit" disabled={status.type === "loading"}
-                  className="w-full py-4 rounded-lg bg-cyan-500 text-black font-bold uppercase tracking-widest text-sm hover:bg-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all disabled:opacity-50 disabled:pointer-events-none"
+                  className="btn-primary w-full py-4"
                 >
                   {status.type === "loading" ? t.contact.sending : t.contact.send}
                 </button>

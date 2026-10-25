@@ -31,12 +31,12 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/your-github-username/your-repo-name.git
+git clone https://github.com/NikosLefakis/nikoslefakis_portfolio.git
 ```
 
 2. **Navigate to the project directory:**
 ```bash
-cd your-repo-name
+cd nikoslefakis_portfolio
 ```
 
 3. **Install dependencies:**
@@ -55,8 +55,8 @@ npm run dev
 
 I am currently open to full-time Software Engineering roles and exciting collaborations. 
 
-- **LinkedIn:** [Nikos Lefakis](https://www.linkedin.com/in/your-linkedin-profile/)
-- **Email:** [your.email@example.com](mailto:your.email@example.com)
+- **LinkedIn:** [Nikos Lefakis](https://www.linkedin.com/in/nikoslefakis/)
+- **Email:** [lefnick@gmail.com](mailto:lefnick@gmail.com)
 
 ---
 *Designed and engineered by Nikos Lefakis.*

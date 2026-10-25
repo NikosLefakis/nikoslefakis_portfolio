@@ -1,25 +1,16 @@
 "use client";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { reveal as fadeUp } from "@/lib/motion";
 
 export default function About() {
   const { t } = useLanguage();
-
-  const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
-  };
 
   return (
     <section id="about" className="py-20 md:py-32 relative border-t t-border-faint">
       <div className="max-w-[1080px] mx-auto px-4 sm:px-6">
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="mb-10 md:mb-16">
-          <div className="flex items-center gap-3 mb-5">
-          <span className="font-mono text-xs font-medium text-cyan-500/60">04</span>
-          <span className="w-5 h-px t-divider" />
-          <span className="text-xs font-medium uppercase tracking-[0.12em] t-muted">{t.about.sectionLabel}</span>
-        </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             {t.about.title} <span className="accent-glow">{t.about.titleAccent}</span>
           </h2>
@@ -61,7 +52,7 @@ export default function About() {
               <div className="relative pl-6">
                 <span className="absolute left-[-5px] top-1.5 w-2.5 h-2.5 bg-cyan-500 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.6)]" />
                 <span className="absolute left-[-1px] top-4 bottom-[-40px] w-[2px] bg-gradient-to-b from-cyan-500/50 to-transparent" />
-                <h3 className="text-xs font-medium text-cyan-500 uppercase tracking-widest mb-2">{t.about.educationLabel}</h3>
+                <h3 className="text-xs font-medium text-cyan-500 mb-2">{t.about.educationLabel}</h3>
                 <h4 className="text-lg font-bold mb-1">{t.about.educationTitle}</h4>
                 <span className="t-muted font-medium text-xs block mb-2">{t.about.educationDate}</span>
                 <p className="t-body font-light text-sm">{t.about.educationDesc}</p>
@@ -70,7 +61,7 @@ export default function About() {
               {/* Volunteering */}
               <div className="relative pl-6 mt-4">
                 <span className="absolute left-[-5px] top-1.5 w-2.5 h-2.5 bg-gray-500 rounded-full" />
-                <h3 className="text-xs font-medium t-muted uppercase tracking-widest mb-2">{t.about.volunteeringLabel}</h3>
+                <h3 className="text-xs font-medium t-muted mb-2">{t.about.volunteeringLabel}</h3>
                 <h4 className="text-lg font-bold mb-1">{t.about.volunteeringTitle}</h4>
                 <span className="t-muted font-medium text-xs block mb-2">{t.about.volunteeringDate}</span>
                 <p className="t-body font-light text-sm">{t.about.volunteeringDesc}</p>

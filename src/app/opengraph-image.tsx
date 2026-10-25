@@ -10,7 +10,7 @@ export default function Image() {
     (
       <div
         style={{
-          background: "#020305",
+          background: "#050506",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -27,7 +27,7 @@ export default function Image() {
         <div style={{
           position: "absolute", top: "-120px", left: "-80px",
           width: "580px", height: "580px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(6,182,212,0.18) 0%, transparent 68%)",
+          background: "radial-gradient(circle, rgba(91,140,255,0.18) 0%, transparent 68%)",
         }} />
         {/* Indigo orb bottom-right */}
         <div style={{
@@ -38,7 +38,7 @@ export default function Image() {
         {/* Dot grid */}
         <div style={{
           position: "absolute", inset: 0, opacity: 0.04,
-          backgroundImage: "radial-gradient(circle, rgba(6,182,212,1) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, rgba(91,140,255,1) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }} />
 
@@ -46,11 +46,11 @@ export default function Image() {
         <div style={{
           display: "flex", alignItems: "center", justifyContent: "center",
           width: "60px", height: "60px", borderRadius: "13px",
-          background: "rgba(6,182,212,0.1)",
-          border: "1.5px solid rgba(6,182,212,0.35)",
+          background: "rgba(91,140,255,0.1)",
+          border: "1.5px solid rgba(91,140,255,0.35)",
           marginBottom: "52px",
         }}>
-          <span style={{ color: "#06B6D4", fontSize: "22px", fontWeight: "800", letterSpacing: "-0.5px" }}>NL</span>
+          <span style={{ color: "#5b8cff", fontSize: "22px", fontWeight: "800", letterSpacing: "-0.5px" }}>NL</span>
         </div>
 
         {/* Name */}
@@ -63,8 +63,8 @@ export default function Image() {
 
         {/* Divider + title */}
         <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "28px" }}>
-          <div style={{ width: "40px", height: "2px", background: "rgba(6,182,212,0.6)", borderRadius: "2px" }} />
-          <span style={{ fontSize: "28px", color: "#06B6D4", fontWeight: "500", letterSpacing: "-0.5px" }}>
+          <div style={{ width: "40px", height: "2px", background: "rgba(91,140,255,0.6)", borderRadius: "2px" }} />
+          <span style={{ fontSize: "28px", color: "#5b8cff", fontWeight: "500", letterSpacing: "-0.5px" }}>
             Full Stack Developer
           </span>
         </div>
@@ -92,7 +92,7 @@ export default function Image() {
         <div style={{
           position: "absolute", right: "0", top: "15%", bottom: "15%",
           width: "3px",
-          background: "linear-gradient(to bottom, transparent, rgba(6,182,212,0.5), transparent)",
+          background: "linear-gradient(to bottom, transparent, rgba(91,140,255,0.5), transparent)",
         }} />
       </div>
     ),

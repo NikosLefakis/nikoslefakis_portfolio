@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/react";
 import { FontAwesomeLoader } from "@/components/FontAwesomeLoader";
+import SpotLight from "@/components/SpotLight";
+import SmoothScroll from "@/components/SmoothScroll";
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
+// Display: Inter Tight at heavy weights. Body: Inter. Both cover Greek.
+const interTight = Inter_Tight({
+  subsets: ["latin", "greek"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-inter-tight",
+});
+
+const inter = Inter({
+  subsets: ["latin", "greek"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -44,8 +53,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
       </head>
-      <body className={`${geist.variable} ${geist.className}`}>
+      <body className={`${inter.variable} ${interTight.variable} ${inter.className}`}>
         <Providers>{children}</Providers>
+        <SpotLight />
+        <SmoothScroll />
         <FontAwesomeLoader />
         <Analytics />
       </body>

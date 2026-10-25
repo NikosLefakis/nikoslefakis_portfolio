@@ -18,6 +18,7 @@ export const translations = {
       viewProjects: "View Projects",
       downloadCV: "Download CV",
       location: "Based in Heraklion, GR",
+      stamp: "Open to work",
     },
     projects: {
       sectionLabel: "Portfolio",
@@ -25,6 +26,11 @@ export const translations = {
       titleAccent: "Projects",
       readMore: "Read more",
       showLess: "Show less",
+      listLabel: "Projects",
+      status: { live: "Live", source: "Source only", prototype: "Prototype" },
+      openLive: "Open live site",
+      openSource: "View source",
+      openPrototype: "Open prototype",
     },
     skills: {
       sectionLabel: "Skills",
@@ -112,6 +118,7 @@ export const translations = {
       viewProjects: "Δείτε τα Έργα",
       downloadCV: "Λήψη CV",
       location: "Ηράκλειο, Ελλάδα",
+      stamp: "Διαθέσιμος",
     },
     projects: {
       sectionLabel: "Portfolio",
@@ -119,6 +126,11 @@ export const translations = {
       titleAccent: "Έργα",
       readMore: "Περισσότερα",
       showLess: "Λιγότερα",
+      listLabel: "Έργα",
+      status: { live: "Live", source: "Μόνο κώδικας", prototype: "Πρωτότυπο" },
+      openLive: "Άνοιγμα site",
+      openSource: "Δες τον κώδικα",
+      openPrototype: "Άνοιγμα πρωτοτύπου",
     },
     skills: {
       sectionLabel: "Δεξιότητες",
