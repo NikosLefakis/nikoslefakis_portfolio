@@ -17,14 +17,11 @@ export interface Project {
 export const projectsData: Project[] = [
   {
     title: "Docveo",
-    description: "Full-stack RAG application that lets users upload PDFs and query them with natural language using LLMs. Features semantic search via pgvector, Groq API for fast inference, and Gemini Embeddings for document understanding.",
-    tags: ["Next.js 16", "TypeScript", "LangChain", "Supabase", "pgvector", "Groq API", "Gemini Embeddings", "Tailwind CSS v4"],
-    image: "https://docveo-beige.vercel.app/opengraph-image?31c5cb54ce578915",
+    description: "Chat with a PDF and get answers backed by the exact page and passage. Every citation is checked against the retrieved text, and it declines when the document does not contain the answer. Ships with an evaluation harness (retrieval recall@3 up to 0.99 on synthetic test sets).",
+    tags: ["Next.js 16", "TypeScript", "Supabase", "pgvector", "Groq API", "Gemini Embeddings", "Tailwind CSS v4", "Vitest"],
+    image: "/assets/docveo.png",
     status: "live",
-    links: {
-      github: "https://github.com/NikosLefakis/Docveo",
-      website: "https://docveoai.vercel.app",
-    },
+    links: { website: "https://docveoai.vercel.app" },
   },
   {
     title: "FormaRep",

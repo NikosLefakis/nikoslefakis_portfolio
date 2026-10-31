@@ -16,7 +16,6 @@ export const translations = {
       description:
         "Computer Science graduate from the University of Crete, focused on building modern full-stack web applications and AI-powered solutions with clean design and solid functionality.",
       viewProjects: "View Projects",
-      downloadCV: "Download CV",
       location: "Based in Heraklion, GR",
       stamp: "Open to work",
     },
@@ -116,7 +115,6 @@ export const translations = {
       description:
         "Απόφοιτος Πληροφορικής από το Πανεπιστήμιο Κρήτης, εστιασμένος στην ανάπτυξη σύγχρονων full-stack εφαρμογών και AI-powered λύσεων με καθαρό σχεδιασμό και στέρεη λειτουργικότητα.",
       viewProjects: "Δείτε τα Έργα",
-      downloadCV: "Λήψη CV",
       location: "Ηράκλειο, Ελλάδα",
       stamp: "Διαθέσιμος",
     },

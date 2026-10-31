@@ -109,15 +109,6 @@ export default function Hero() {
               <Link href="#contact" className="btn-ghost">
                 {t.nav.letsTalk}
               </Link>
-              <a
-                href="/assets/cv_nikoslefakis.pdf"
-                download
-                hidden
-                className="btn-ghost"
-              >
-                <i className="fa-solid fa-download text-sm" />
-                {t.hero.downloadCV}
-              </a>
             </motion.div>
 
             {/* Socials */}
